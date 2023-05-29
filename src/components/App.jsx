@@ -30,11 +30,13 @@ export class App extends React.Component {
     const countTotalFeedback = this.countTotalFeedback()
     const countPositiveFeedbackPercentage = this.countPositiveFeedbackPercentage()
 
-    return <div><Section title="Please leave feedback">
-        <FeedbackOptions options={options}
+    return <div>
+      <Section title="Please leave feedback">
+      <FeedbackOptions options={options}
         addFeedback={this.addFeedback} />
       </Section>
-      <Section title="Statistics">{countTotalFeedback ? <Statistics good={good} neutral={neutral} bad={bad} total={countTotalFeedback} percentage={countPositiveFeedbackPercentage}/> : <Notification message="There is no feedback"/>}
+      <Section title="Statistics">{countTotalFeedback ?
+        <Statistics good={good} neutral={neutral} bad={bad} total={countTotalFeedback} percentage={countPositiveFeedbackPercentage} /> : <Notification message="There is no feedback" />}
       </Section>
     </div>
   }
